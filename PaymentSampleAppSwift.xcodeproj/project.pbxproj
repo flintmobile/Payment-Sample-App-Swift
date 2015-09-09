@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4FDFD6161BA0C29A0065CB59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFD6151BA0C29A0065CB59 /* AppDelegate.swift */; };
-		4FDFD6181BA0C29A0065CB59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFD6171BA0C29A0065CB59 /* ViewController.swift */; };
 		4FDFD61B1BA0C29A0065CB59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FDFD6191BA0C29A0065CB59 /* Main.storyboard */; };
 		4FDFD61D1BA0C29A0065CB59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FDFD61C1BA0C29A0065CB59 /* Assets.xcassets */; };
 		4FDFD6201BA0C29A0065CB59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FDFD61E1BA0C29A0065CB59 /* LaunchScreen.storyboard */; };
 		4FDFD62B1BA0C29A0065CB59 /* PaymentSampleAppSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFD62A1BA0C29A0065CB59 /* PaymentSampleAppSwiftTests.swift */; };
 		4FDFD6361BA0C29B0065CB59 /* PaymentSampleAppSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFD6351BA0C29B0065CB59 /* PaymentSampleAppSwiftUITests.swift */; };
+		4FDFD6441BA0C3580065CB59 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFD6431BA0C3580065CB59 /* ItemViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		4FDFD6121BA0C29A0065CB59 /* PaymentSampleAppSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaymentSampleAppSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDFD6151BA0C29A0065CB59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4FDFD6171BA0C29A0065CB59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4FDFD61A1BA0C29A0065CB59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4FDFD61C1BA0C29A0065CB59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FDFD61F1BA0C29A0065CB59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		4FDFD6311BA0C29B0065CB59 /* PaymentSampleAppSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaymentSampleAppSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDFD6351BA0C29B0065CB59 /* PaymentSampleAppSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSampleAppSwiftUITests.swift; sourceTree = "<group>"; };
 		4FDFD6371BA0C29B0065CB59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FDFD6431BA0C3580065CB59 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				4FDFD6151BA0C29A0065CB59 /* AppDelegate.swift */,
-				4FDFD6171BA0C29A0065CB59 /* ViewController.swift */,
+				4FDFD6431BA0C3580065CB59 /* ItemViewController.swift */,
 				4FDFD6191BA0C29A0065CB59 /* Main.storyboard */,
 				4FDFD61C1BA0C29A0065CB59 /* Assets.xcassets */,
 				4FDFD61E1BA0C29A0065CB59 /* LaunchScreen.storyboard */,
@@ -255,8 +255,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FDFD6181BA0C29A0065CB59 /* ViewController.swift in Sources */,
 				4FDFD6161BA0C29A0065CB59 /* AppDelegate.swift in Sources */,
+				4FDFD6441BA0C3580065CB59 /* ItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
