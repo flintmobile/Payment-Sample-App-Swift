@@ -22,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     FlintService.sharedInstance().startServiceWithCompletion {
       (status, userInfo) -> Void in
-      print("========service error: \(userInfo[FlintServiceErrorKey])===========")
+      
+      if let serviceError = userInfo[FlintServiceErrorKey] {
+        print("!!! Service error: \(serviceError)")
+      }
     }
     
     return true
