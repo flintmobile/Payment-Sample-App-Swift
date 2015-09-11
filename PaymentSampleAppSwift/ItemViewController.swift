@@ -59,7 +59,7 @@ class ItemViewController : UIViewController {
   }
   
   @IBAction func handleTakePaymentTapped(sender: AnyObject) {
-    
+    FlintUI.takePaymentForOrderItems(orderItems, fromViewController: self)
   }
   
 // MARK: - Private
@@ -87,7 +87,16 @@ class ItemViewController : UIViewController {
 // MARK: - FlintTransactionDelegate
 
 extension ItemViewController : FlintTransactionDelegate {
-
+  
+  func transactionDidCancel(canceledStep: FlintTransactionCancelableStep, autoTimeout autoTimeOut: Bool) {
+    handleResetTapped(true)
+    dismissViewControllerAnimated(true, completion: nil)
+  }
+  
+  func transactionDidComplete(userInfo: [NSObject : AnyObject]!) {
+    handleResetTapped(true)
+    dismissViewControllerAnimated(true, completion: nil)
+  }
 }
 
 // MARK: - UITextFieldDelegate
