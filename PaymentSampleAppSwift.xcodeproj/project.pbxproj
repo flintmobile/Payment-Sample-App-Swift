@@ -16,6 +16,8 @@
 		4FDFD6441BA0C3580065CB59 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFD6431BA0C3580065CB59 /* ItemViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4FDFD6461BA0C4FE0065CB59 /* FlintConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDFD6451BA0C4FE0065CB59 /* FlintConnectSDK.framework */; };
 		4FDFD6471BA0C4FE0065CB59 /* FlintConnectSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDFD6451BA0C4FE0065CB59 /* FlintConnectSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4FDFD64D1BA215790065CB59 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFD64C1BA215790065CB59 /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
+		4FDFD6501BA23AB70065CB59 /* UITextFieldExension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFD64F1BA23AB70065CB59 /* UITextFieldExension.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		4FDFD6371BA0C29B0065CB59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FDFD6431BA0C3580065CB59 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		4FDFD6451BA0C4FE0065CB59 /* FlintConnectSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FlintConnectSDK.framework; sourceTree = "<group>"; };
+		4FDFD64C1BA215790065CB59 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		4FDFD64F1BA23AB70065CB59 /* UITextFieldExension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 		4FDFD6141BA0C29A0065CB59 /* PaymentSampleAppSwift */ = {
 			isa = PBXGroup;
 			children = (
+				4FDFD64E1BA23A920065CB59 /* Extension */,
+				4FDFD6491BA215270065CB59 /* Subclass UI */,
 				4FDFD6151BA0C29A0065CB59 /* AppDelegate.swift */,
 				4FDFD6431BA0C3580065CB59 /* ItemViewController.swift */,
 				4FDFD6191BA0C29A0065CB59 /* Main.storyboard */,
@@ -142,6 +148,22 @@
 				4FDFD6371BA0C29B0065CB59 /* Info.plist */,
 			);
 			path = PaymentSampleAppSwiftUITests;
+			sourceTree = "<group>";
+		};
+		4FDFD6491BA215270065CB59 /* Subclass UI */ = {
+			isa = PBXGroup;
+			children = (
+				4FDFD64C1BA215790065CB59 /* TextField.swift */,
+			);
+			name = "Subclass UI";
+			sourceTree = "<group>";
+		};
+		4FDFD64E1BA23A920065CB59 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4FDFD64F1BA23AB70065CB59 /* UITextFieldExension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FDFD6501BA23AB70065CB59 /* UITextFieldExension.swift in Sources */,
+				4FDFD64D1BA215790065CB59 /* TextField.swift in Sources */,
 				4FDFD6161BA0C29A0065CB59 /* AppDelegate.swift in Sources */,
 				4FDFD6441BA0C3580065CB59 /* ItemViewController.swift in Sources */,
 			);
@@ -509,6 +533,7 @@
 				4FDFD63C1BA0C29B0065CB59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FDFD63D1BA0C29B0065CB59 /* Build configuration list for PBXNativeTarget "PaymentSampleAppSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +542,7 @@
 				4FDFD63F1BA0C29B0065CB59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FDFD6401BA0C29B0065CB59 /* Build configuration list for PBXNativeTarget "PaymentSampleAppSwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +551,7 @@
 				4FDFD6421BA0C29B0065CB59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

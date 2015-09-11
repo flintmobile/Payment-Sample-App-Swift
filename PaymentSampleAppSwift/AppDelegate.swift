@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     FlintAPIConfig.sharedInstance().password = "T3st1ng1"
     
     FlintService.sharedInstance().startServiceWithCompletion {
-      (status, userInfo) -> Void in
+      status, userInfo -> Void in
       
       if let serviceError = userInfo[FlintServiceErrorKey] {
         print("!!! Service error: \(serviceError)")
