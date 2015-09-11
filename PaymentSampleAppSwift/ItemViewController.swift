@@ -16,44 +16,81 @@ class ItemViewController : UIViewController {
   @IBOutlet weak var taxTextField: TextField!
   @IBOutlet weak var totalLabel: UILabel!
   
-  let orderItems = [FlintOrderItem]()
+  var orderItems = [FlintOrderItem]()
   var total: Float = 0
   
-  override func viewDidLoad() {
+// MARK: - Life Cycle
+  
+  override func viewDidLoad() {  
     super.viewDidLoad()
   }
+  
+// MARK: - Storyboard
   
   @IBAction func handleAddItemTapped(sender: AnyObject) {
     guard let price = priceTextField.floatValue(), name = nameTextField.text where !name.isEmpty else {
       let alertController = UIAlertController(title: "Error", message: "Name and price can't be empty", preferredStyle: .Alert)
       let okButton = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
       alertController.addAction(okButton)
-      self.presentViewController(alertController, animated: true, completion: nil)
+      
+      presentViewController(alertController, animated: true, completion: nil)
       return
     }
     
     let item = FlintOrderItem()
     item.name = name;
+    item.quantity = 1
     item.price = price;
-    item.taxAmount = self.taxTextField.floatValue()
+    item.taxAmount = taxTextField.floatValue()
+    
+    orderItems.append(item)
+    refreshTotalLabel()
+    
+    // reset
+    nameTextField.text = nil;
+    priceTextField.text = nil;
+    taxTextField.text = nil;
+    dismissKeyboard()
   }
   
   @IBAction func handleResetTapped(sender: AnyObject) {
-    
+    orderItems.removeAll()
+    refreshTotalLabel()
   }
   
   @IBAction func handleTakePaymentTapped(sender: AnyObject) {
     
   }
+  
+// MARK: - Private
+  
+  func refreshTotalLabel() {
+    total = 0
+    for orderItem in orderItems {
+      if let orderTotal = orderItem.total()?.floatValue {
+        total += orderTotal
+      }
+    }
+    
+    totalLabel.text = "$ \(total.toString(0.2))"
+  }
+  
+  func dismissKeyboard() {
+    for subView in view.subviews {
+      if let textField = subView as? UITextField where textField.isFirstResponder() {
+        textField.resignFirstResponder()
+      }
+    }
+  }
 }
 
-// MARK: FlintTransactionDelegate
+// MARK: - FlintTransactionDelegate
 
 extension ItemViewController : FlintTransactionDelegate {
 
 }
 
-// MARK: UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 
 extension ItemViewController : UITextFieldDelegate {
   
