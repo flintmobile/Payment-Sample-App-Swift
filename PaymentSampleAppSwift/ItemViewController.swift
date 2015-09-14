@@ -37,6 +37,12 @@ class ItemViewController : UIViewController {
       return
     }
     
+    /*************************************************************************
+    * A FlintOrderItem is the smallest unit of the payment work flow
+    * By default, the item type is OrderItemTypeCustomAmount (addition)
+    * To implement discount, set the item type to OrderItemTypeCustomDiscount (subtraction),
+    * The other item types are for Flint internal usage.
+    **************************************************************************/
     let item = FlintOrderItem()
     item.name = name;
     item.quantity = 1
@@ -59,7 +65,18 @@ class ItemViewController : UIViewController {
   }
   
   @IBAction func handleTakePaymentTapped(sender: AnyObject) {
-    FlintUI.takePaymentForOrderItems(orderItems, fromViewController: self)
+    if total > 0 {
+      /******************************************************************************
+      * FlintUI is the main entrance into the drop-in payment work flow
+      * Configure an array of FlintOrderItem(s) and then
+      * either use the convenient method to start the workflow as a modal view
+      * or use the view controller method to implement your own navigation stack
+      * Implement FlintTransactionDelegate to receive transaction status call back
+      ******************************************************************************/
+      FlintUI.takePaymentForOrderItems(orderItems, fromViewController: self)
+    } else {
+      showAlertMessage(NSLocalizedString("Amount to take payment must be greater than 0. Try adding some items", comment: ""))
+    }
   }
   
 // MARK: - Private
@@ -81,6 +98,13 @@ class ItemViewController : UIViewController {
         textField.resignFirstResponder()
       }
     }
+  }
+  
+  func showAlertMessage(message: String?) {
+    let alertController = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: message, preferredStyle: .Alert)
+    let okAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
+    alertController.addAction(okAction)
+    presentViewController(alertController, animated: true, completion: nil)
   }
 }
 
